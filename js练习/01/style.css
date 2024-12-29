@@ -1,0 +1,10 @@
+html{
+    font-size: 10px;
+    background:url(./image/background.jpg);
+    background-size: cover;
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
