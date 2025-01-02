@@ -1,3 +1,78 @@
+# Vue的基本原理
+
+---
+
+当一个Vue实例创建时，Vue会遍历data中的属性，用Object.defineProperty（Vue3.0使用proxy）将它们转为getter/setter，并且在内部追踪相关依赖，在属性被访问和修改时通知变化。每个组件实例都有相应的watcher程序实例，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的setter被调用时，会通知watcher重新计算，从而致使它关联的组件得以更新
+
+# v-if和v-show的区别
+
+---
+
++ 手段：
+  + v-if是动态地向DOM树内添加或删除DOM元素
+  + v-show是通过设置DOM元素的display样式属性控制显隐
++ 编译过程：
+  + v-if切换有一个局部编译/卸载的过程，切换过程中合适地销毁和重建内部的事件监听和子组件
+  + v-show只是简单的基于css切换
++ 编译条件：
+  + v-if是惰性的，如果初始条件为假，则什么也不做；只有在条件第一次变为真时才开始局部编译
+  + v-show是在任何条件下，无论首次条件是否为真，都被编译，然后被缓存，而且DOM元素保留
++ 性能消耗：
+  + v-if有更高的切换消耗
+  + v-show有更高的初始渲染消耗
++ 使用场景
+  + v-if适合条件不大可能改变
+  + v-show适合频繁切换
+
+# v-model是如何实现的，语法糖实际是什么？
+
+---
+
+## 作用在表单元素上
+
+动态绑定了input的value指向了message变量，并且在触发input事件的时候去动态把message设置为目标值
+
+```html
+<input v-model = "sth" />
+// 等同于
+<input 
+	v-bind:value="message"
+	v-on:input="message=$event.target.value"
+>
+// $event 指代当前触发的事件对象
+// $event.target 指代当前触发的事件对象的dom
+// $event.target.value 就是当前dom的value值
+// 在@input方法中, value => sth
+// 在:value中, sth => value
+```
+
+## 作用在组件上
+
+在自定义组件中，v-model默认会利用名为value的prop和名为input的事件
+
+**本质是一个父子组件通信的语法糖，通过prop和$.emit实现。**
+
+在组件的实现中，可以通过v-model属性来配置子组件接收的prop名称，以及派发的事件名称
+
+eg:
+
+```js
+// 父组件
+<aa-input v-model="aa"></aa-input>
+// 等价于
+<aa-input v-bind:value="aa" v-on:input="onmessage"></aa-input>
+
+// 子组件
+<aa-input v-bind:value="aa" v-on:input="onmessage"></aa-input>
+
+props:{ value:aa, }
+methods:{
+    onmessage(e){
+        $emit('input',e.target.value)
+    }
+}
+```
+
 # Vue-Router的懒加载如何实现
 
 常用：使用`箭头函数+import`动态加载
