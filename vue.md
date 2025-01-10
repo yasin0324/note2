@@ -159,3 +159,86 @@ hash模式和history模式都有各自的优势和缺陷，还是要根据实际
 + `renderTracked` 、`renderTriggered` 对应 `onRenderTracked()` 和 `onRenderTriggered()`
 + `activated` 、`deactivated` 对应 `onActivated()` 和 `onDeactivated()`
 + `serverPrefetch` 对应 `onServerPrefetch()`
+
+# Vue的scoped原理
+
+---
+
+## scoped的使用
+
+```html
+<style scoped>
+    .container {
+        background: red;
+    }
+</style>
+```
+
+在`style`标签上增加`scoped`属性后，最终编译出来的结果会在选择器上增加一个唯一的`attribute`(比如`data-v-mlxsojjm`)，每个`.vue`文件编译出来的`attribute`都不一样，从而实现了**样式隔离**
+
+```html
+<style scoped>
+    .container[data-v-mlxsojjm] {
+        background: red;
+    }
+</style>
+```
+
+## .vue文件的css编译
+
+比如.vue文件长这样：
+
+```html
+<template>
+	<div class="container"></div>
+</template>
+
+<style scoped>
+    .container {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+```
+
+我们可以使用vue提供的解析单文件组件的编译包`@vue/compiler-sfc`，来解析我们在.vue文件中编写的css
+
+```js
+const { compileStyle } = require("@vue/compiler-sfc");
+const css = `
+.container {
+	width: 100px;
+	height: 100px;
+	background-color: red;
+}
+`;
+const { code } = compileStyle({
+    source: css, // css源代码
+    scoped: true, // 是否要启用scoped
+    id: `data-v-${Math.random().toString(36).substring(2, 10)}`, // scoped的id
+});
+console.log(code);
+```
+
+编译结果如下
+
+```css
+.container[data-v-mlxsojjm] {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+}
+```
+
+可以看到，带了scoped的style标签中的css，编译后会被加上一个**属性选择器**，名字以`data-v`开头，后面跟的是一个字符串，这个其实可以自定义，只要保证全局唯一就行了
+
+template经过编译后，结果如下：
+
+```html
+<template>
+	<div class="container" data-v-mlxsojjm></div> 
+</template>
+```
+
+> 这就是scoped的原理了，**通过给组件中DOM元素和CSS各自都添加一个相同且唯一的属性选择器，让当前的css文件的样式只对当前组件生效**
