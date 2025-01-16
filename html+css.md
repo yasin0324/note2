@@ -383,3 +383,65 @@ BFC(Block Formation Context)块级格式化上下文
 + float不为none
 + overflow不为visible（常用）
 + display的值为inline-block、table-cell、table-caption
+
+# display
+
+---
+
+| 属性值       | 作用                                                     |
+| ------------ | -------------------------------------------------------- |
+| none         | 元素不显示，并会从文档流中移除                           |
+| block        | 块级元素类型，默认宽度为父元素宽度，可设置宽高，换行显示 |
+| inline       | 行内元素类型。默认宽度为内容宽度，不可设置宽高，同行显示 |
+| inline-block | 默认宽度为内容宽度，可以设置宽高，同行显示               |
+| list-item    | 像块类型元素一样显示，并添加样式列表标记                 |
+| table        | 此元素会作为块级表格来显示                               |
+| inherit      | 从父元素继承display属性的值                              |
+
+# display的block、inline和inline-block的区别
+
+---
+
++ `block`：会独占一行，多个元素会另起一行，可以设置width、height、margin和padding属性
++ `inline`：元素不会独占一行，设置width、height属性无效。但可以设置水平方向的margin和padding属性，能设置垂直方向的padding，不能设置垂直方向的margin
++ `inline-block`：将对象设置为inline对象，但对象的内容作为block对象呈现，之后的内联对象会被排列在同一行内
+
+# 隐藏元素的方法
+
+---
+
++ `display:none`：渲染树不会包含该渲染对象，因此该元素不会在页面中占据位置，也不会响应绑定的监听事件
++ `visibility:hidden`：元素在页面中仍占据空间，但是不会影响绑定的监听事件
++ `opacity:0`：将元素的透明度设置为0，以此来实现元素的隐藏。元素在页面中仍然占据空间，并且能够响应元素绑定的监听事件
++ `position:absolute`：通过使用绝对定位将元素移除可视区域，以此来实现元素的隐藏
++ `z-index:负值`：用其他元素遮盖住该元素，以此来实现隐藏
++ `clip/clip-path`：使用元素裁剪的方法来实现元素的隐藏，这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件
++ `transform:scale(0,0)`：将元素缩放为0，来实现元素的隐藏。这种方法下，元素仍在页面中占据位置，但是不会响应绑定的监听事件
+
+# display:none和visibility:hidden的区别
+
+---
+
+这两个属性都可以让元素隐藏，不可见
+
++ 在渲染树中
+  + `display:none`会让元素完全从渲染树中消失，渲染时不会占据任何空间
+  + `visibility:hidden`不会让元素从渲染树中消失，渲染的元素还会占据相应的空间，只是内容不可见
++ 是否可继承
+  + `display:none`是非继承属性，子孙节点会随着父节点从渲染树消失，通过修改子孙节点的属性也无法显示
+  + `visibility:hidden`是继承属性，子孙节点消失是由于继承了`hidden`，通过设置`visibility:visible`可以让子孙节点显示
++ 修改常规文档流中元素的`display`通常会造成文档的重排，但是修改`visibility`属性只会造成本元素的重绘
+
+# CSS3的新特性
+
+---
+
++ 新增各种CSS选择器（`:not(.input)`：所有class不是"input"的节点）
++ 圆角(border-radius)
++ 多列布局
++ 阴影和反射(shadow)
++ 文字特效
++ 文字渲染
++ 线性渐变(gradient)
++ 旋转(transform)
++ 增加了旋转、缩放、定位、倾斜、动画、多背景
