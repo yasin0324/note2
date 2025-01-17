@@ -445,3 +445,48 @@ BFC(Block Formation Context)块级格式化上下文
 + 线性渐变(gradient)
 + 旋转(transform)
 + 增加了旋转、缩放、定位、倾斜、动画、多背景
+
+# 两栏布局的实现
+
+---
+
+一般两栏布局指的是 左边一栏宽度固定，右边一栏宽度自适应
+
++ 利用浮动，设置左边元素的宽度，并设置向左浮动；将右边元素的margin-left设置为左边元素的宽度，宽度设置为auto（默认为auto，撑满整个父元素）
+
+  ```css
+  .outer {
+      height: 100px;
+  }
+  .left {
+      float: left;
+      width: 200px;
+      background-color: pink;
+  }
+  .right {
+      margin-left: 200px;
+      width: auto;
+      background-color: purple;
+  }
+  ```
+
++ 利用浮动，左侧元素设置固定大小，并向左浮动，右侧元素设置overflow：hidden；这样右边就触发了BFC，BFC的区域不会与浮动元素发生重叠
+
+  ```css
+  .left {
+  	width: 100px;
+      height: 200px;
+      background-color: pink;
+      float: left;
+  }
+  .right {
+      width: auto;
+      height: 200px;
+      background-color: purple;
+      overflow:hidden;
+  }
+  ```
+
+  
+
++ 
