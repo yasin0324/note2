@@ -487,6 +487,209 @@ BFC(Block Formation Context)块级格式化上下文
   }
   ```
 
-  
++ 利用flex布局，将左边元素设置为固定宽度，将右边的元素设置为flex:1
 
-+ 
+  ```css 
+  .outer {
+      display: flex;
+      height: 100px;
+  }
+  .left {
+      width: 200px;
+      background-color: pink;
+  }
+  .outer {
+      flex: 1;
+      background-color: purple;
+  }
+  ```
+
++  利用绝对定位，将父级元素设置为相对定位，左边元素设置为absolute定位，宽度设置为固定宽度，将右边元素的margin-left的值设置为左边元素的宽度
+
+  ```css
+  .outer {
+      position: relative;
+      height: 100px;
+  }
+  .left {
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+  }
+  .right {
+      margin-left: 200px;
+      background-color: purple;
+  }
+  ```
+
++ 利用绝对定位，将父级元素设置为相对定位，左边元素宽度设置为固定宽度，右边元素设置为绝对定位，左边定位为左边元素宽度，其余方向定位为0
+
+  ```css
+  .outer {
+      position: relative;
+      height: 100px;
+  }
+  .left {
+      width: 200px;
+      background-color: pink;
+  }
+  .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 200px;
+      background-color: purple;
+  }
+  ```
+
+# 三栏布局的实现
+
+---
+
+三栏布局一般指的是页面中一共有三栏，左右两栏宽度固定，中间自适应的布局
+
++ 利用绝对定位，左右两栏设置为绝对定位，中间设置对应方向大小的margin值
+
+  ```css
+  .outer {
+      position: relative;
+      height: 100px;
+  }
+  .left {
+      position: absolute;
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+  }
+  .center {
+      margin-left: 200px;
+      margin-right: 200px;
+      height: 100px;
+      background-color: aqua;
+  }
+  .right {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+  }
+  ```
+
++ 利用flex布局，左右两栏设置固定大小，中间一栏设置为flex:1
+
+  ```css
+  .outer {
+      display: flex;
+      height: 100px;
+  }
+  .left {
+      width: 100px;
+      background-color: pink;
+  }
+  .center {
+      flex: 1;
+      background-color: aqua;
+  }
+  .right {
+      width: 100px;
+      background-color: purple;
+  }
+  ```
+
++ 利用浮动，左右两栏设置固定大小，并设置对应方向的浮动，中间一栏设置左右两个方向的margin值，这种方式**中间一栏必须放到最后**
+
+  ```css
+  .outer {
+      height: 100px;
+  }
+  .left {
+      float: left;
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+  }
+  .center {
+      height: 100px;
+      margin-left: 200px;
+      margin-right: 200px;
+      background-color: aqua;
+  }
+  .right {
+      float: right;
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+  }
+  ```
+
++ 圣杯布局，利用浮动和负边距来实现。父级元素设置左右的padding，三列均设置向左浮动，中间一列放在最前面，宽度设置为父级元素的宽度，因此后面两列都被挤到了下一行，通过设置margin负值将其移动到上一行，再利用相对定位，定位到两边
+
+  ```css
+  .outer {
+      height: 100px;
+      padding-left: 200px;
+      padding-right: 200px;
+  }
+  .left {
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+      float: left;
+      margin-left: -100%;
+      position: relative;
+      left: -200px;
+  }
+  .center {
+      width: 100%;
+      height: 100px;
+      float: left;
+      background-color: aqua;
+  }
+  .right {
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+      float: left;
+      margin-left: -200px;
+      position: relative;
+      left: 200px;
+  }
+  ```
+
++ 双飞翼布局，双飞翼布局相对于圣杯布局来说，左右位置的保留是通过中间列的margin值来实现的，而不是通过父元素的padding来实现的，本质上来说，也是通过浮动和外边距负值来实现的
+
+  ```css
+  .outer {
+      height: 100px;
+  }
+  .left {
+      width: 200px;
+      height: 100px;
+      background-color: pink;
+      float: left;
+      margin-left: -100%;
+  }
+  .wrapper {
+      width: 100%;
+      height: 100px;
+      float: left;
+  }
+  .center {
+      margin-left: 200px;
+      margin-right: 200px;
+      height: 100px;
+      background-color: aqua;
+  }
+  .right {
+      width: 200px;
+      height: 100px;
+      background-color: purple;
+      float: left;
+      margin-left: -200px;
+  }
+  ```
+
