@@ -16,3 +16,8 @@
 + git branch -d xxx 删除分支
 + git stash 将当前分支的改变保存到堆栈中
 + git stash pop 恢复堆栈中缓存的
+
+# git marge 和 git rebase
+
+---
+
