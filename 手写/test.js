@@ -1,9 +1,15 @@
-const obj = {
-    getArrow() {
-        return () => {
-            console.log(this === obj);
-        };
-    },
-};
+var n = 100;
 
-obj.getArrow();
+function foo1() {
+    console.log(n);
+}
+
+function foo2() {
+    var n = 200;
+    console.log(n);
+    foo1();
+}
+
+foo2();
+
+console.log(n);
