@@ -52,15 +52,16 @@ HTML解析的时候遇到了JavaScript标签，会停止解析HTML，而去加�
 
 V8引擎本身的源码非常复杂，大概有超过100w行C++代码，通过了解他的架构，我们可以知道它是如何对JavaScript执行的：
 
-+ Parse模块会将JavaScript代码转换成AST（抽象语法树），这是因为解释器并不直接认识JavaScript代码
++ Parse模块会将JavaScript代码转换成AST（Abstract syntax tree，抽象语法树），这是因为解释器并不直接认识JavaScript代码
   + 如果函数没有被调用，是不会转换成AST的
   + Parse的V8官方文档：https://v8.dev/blog/scanner
+  + [AST explorer](https://astexplorer.net/)
 + Ignition是一个解释器，会将AST转换成ByteCode（字节码）
   + 同时会收集TurboFn优化所需要的信息（比如函数参数的类型信息，有了类型才能进行真实的运算）
   + 如果函数只调用一次，Ignition会解释执行ByteCode
   + Ignition的V8官方文档：https://v8.dev/blog/ignition-interpreter
 + TurboFan是一个编译器，可以将字节码编译为CPU可以直接执行的机器码
-  + 如果一个函数被多次调用，那么就会被标记为热点函数，那么就会经过TurboFan转换成优化的机器码，提高代码的执行性能
+  + 如果一个函数被多次调用，那么就会被标记为热点函数，那么就会经过TurboFan转换成优化的机器码（对应平台的机器码），提高代码的执行性能
   + 但是，机器码实际上也会被还原为ByteCode，这是因为如果后续执行函数的过程中，类型发生了变换（比如sum函数原来执行的是number类型，后来执行变成了string类型），之前优化的机器码并不能正确地处理运算，就会逆向地转换成字节码
   + TurboFan的V8官方文档：https://v8.dev/blog/turbofan-jit
 
@@ -72,7 +73,7 @@ V8引擎本身的源码非常复杂，大概有超过100w行C++代码，通过�
 
 JavaScript源码是如何被解析（parse过程）的：
 
-+ Blink将源码交给V8引擎，Stream获取到源码并且进行编码转换
++ Blink（内核）将js源码交给V8引擎，Stream获取到源码并且进行编码转换
 + Scanner会进行词法分析（lexical analysis），词法分析会将代码转换成tokens
 + 接下来token会被转换成AST树，经过Parser和Preparser
   + Parser就是直接将tokens转成AST树架构
