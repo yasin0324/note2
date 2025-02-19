@@ -240,3 +240,64 @@ JavaScript中的函数可以当做一个类的构造函数来使用，也就是�
 + 这个新对象会绑定到函数调用的this上
 + 如果函数没有返回其他对象，表达式会返回这个新对象
 
+```js
+// 通过一个new关键字调用一个函数时（构造器），这个时候this是在调用这个构造器时创建出来的对象
+// this = 创建出来的对象
+// 这个绑定过程就是new绑定
+function Persion(name) {
+    console.log(this);	// Person {}
+    this.name = name;
+}
+
+var p1 = new Person("yasin")
+console.log(p1.name);	// yasin
+
+var p2 = new Person("sakura")
+console.log(p2.name);	// sakura
+```
+
+## 规则优先级
+
+1. 默认绑定优先级最低
+2. 显式绑定优先级高于隐式绑定
+3. new绑定优先级高于隐式绑定
+4. new绑定优先级高于bind
+   + new绑定和call/apply不能一起使用
+
+# 一些函数的this分析
+
+---
+
+有些时候，我们会调用一些JavaScript的内置函数，或者一些第三方库中的内置函数，这些内置函数会要求我们传入另外一个函数，我们自己并不会显式地调用这些函数，JavaScript内部或者第三方库内部会帮助我们执行，这些函数中的this是如何绑定的？
+
+## setTimeout
+
+```js
+setTimeout(function () {
+    console.log(this);	// window
+}, 1000);
+```
+
+## 监听点击
+
+```js
+const boxDiv = document.querySelect(".box");
+boxDiv.onclick = function() {
+    console.log(this);	// boxDiv对象
+}
+```
+
+## 数组的forEach(/map/filter/find)
+
+```js
+var names = ["abc", "cba", "nba"];
+names.forEach(function(item) {
+    console.log(this);	// window
+})
+
+var obj = { name: "yasin" };
+names.forEach(function(item) {
+    console.log(this);	// obj对象
+}, obj)
+```
+
