@@ -6,13 +6,13 @@ JavaScript代码，在浏览器中是如何被执行的？
 
 输入网址后，从服务器的静态资源中得到index.html，开始解析，遇到link/script标签，下载解析对应的css/js文件
 
-![](C:\Users\锅\Desktop\guo\八股\js学习笔记\image\PixPin_2025-02-12_08-24-56.png)
+![PixPin_2025-02-12_08-24-56](./image/PixPin_2025-02-12_08-24-56.png)
 
 # 浏览器渲染过程
 
 ---
 
-![PixPin_2025-02-12_08-27-22](C:\Users\锅\Desktop\guo\八股\js学习笔记\image\PixPin_2025-02-12_08-27-22.png)
+![PixPin_2025-02-12_08-27-22](./image/PixPin_2025-02-12_08-27-22.png)
 
 HTML解析的时候遇到了JavaScript标签，会停止解析HTML，而去加载和执行JavaScript代码
 
@@ -39,7 +39,7 @@ HTML解析的时候遇到了JavaScript标签，会停止解析HTML，而去加�
 
 ---
 
-![PixPin_2025-02-12_08-39-32](C:\Users\锅\Desktop\guo\八股\js学习笔记\image\PixPin_2025-02-12_08-39-32.png)
+![PixPin_2025-02-12_08-39-32](./image/PixPin_2025-02-12_08-39-32.png)
 
 官方对V8引擎的定义
 
@@ -69,7 +69,7 @@ V8引擎本身的源码非常复杂，大概有超过100w行C++代码，通过�
 
 ---
 
-![PixPin_2025-02-12_08-57-26](C:\Users\锅\Desktop\guo\八股\js学习笔记\image\PixPin_2025-02-12_08-57-26.png)
+![PixPin_2025-02-12_08-57-26](./image/PixPin_2025-02-12_08-57-26.png)
 
 JavaScript源码是如何被解析（parse过程）的：
 
