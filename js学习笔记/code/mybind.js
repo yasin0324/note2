@@ -14,9 +14,9 @@ Function.prototype.mybind = function (thisArg, ...bindArgs) {
     };
 };
 
-function sum(num1, num2, num3, num4) {
-    console.log(num1, num2, num3, num4);
+function sum() {
+    console.log(this);
 }
 
 var sum2 = sum.mybind("abc");
-sum2(1,2,3,4);
+sum2();
