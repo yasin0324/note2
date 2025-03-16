@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "js学习笔记/02_JavaScript的内存管理和闭包.md",
+                "file": "js学习笔记/06_js面向对象.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "02_JavaScript的内存管理和闭包"
+              "title": "06_js面向对象"
             }
           }
         ]
@@ -113,13 +113,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "js学习笔记/02_JavaScript的内存管理和闭包.md",
+                "file": "js学习笔记/06_js面向对象.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "02_JavaScript的内存管理和闭包 的大纲"
+              "title": "06_js面向对象 的大纲"
             }
           },
           {
@@ -170,8 +170,8 @@
   },
   "active": "98bbd4289850e441",
   "lastOpenFiles": [
-    "js学习笔记/image/PixPin_2025-02-16_11-59-26.png",
     "js学习笔记/02_JavaScript的内存管理和闭包.md",
+    "js学习笔记/image/PixPin_2025-02-16_11-59-26.png",
     "image/20-混合加密.webp",
     "image/22-数字证书工作流程.webp",
     "image/数字签名.webp",
