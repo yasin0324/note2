@@ -17,7 +17,8 @@
 <div id="div1"></div>
 ```
 
-
++ offsetWidth = ( 内容宽度 + 内边距 + 边框 )，无外边距
++ offsetWidth = ( 100px + 10px * 2 + 1px * 2) = 122px
 
 # margin纵向重叠的问题
 
