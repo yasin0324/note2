@@ -20,6 +20,24 @@
 + offsetWidth = ( 内容宽度 + 内边距 + 边框 )，无外边距
 + offsetWidth = ( 100px + 10px * 2 + 1px * 2) = 122px
 
+> 如果让offsetWidth等于100px，该如何做？
+>
+> ```html
+> <style>
+>   #div1 {
+>     width: 100px;
+>     padding: 10px;
+>     border: 1px solid #ccc;
+>     margin: 10px;
+>     box-sizing: border-box;
+>   }
+> </style>
+> 
+> <div id="div1"></div>
+> ```
+>
+> + 将box-sizing设置为border-box，width为包括内容宽度、内边距和边框的宽度
+
 # margin纵向重叠的问题
 
 ---
