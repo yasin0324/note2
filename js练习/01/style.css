@@ -1,6 +1,6 @@
 html{
     font-size: 10px;
-    background:url(./image/background.jpg);
+    /* background:url(./image/background.jpg); */
     background-size: cover;
 }
 body,html {
