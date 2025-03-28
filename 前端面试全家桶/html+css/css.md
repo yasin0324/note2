@@ -17,8 +17,8 @@
 <div id="div1"></div>
 ```
 
-+ offsetWidth = ( 内容宽度 + 内边距 + 边框 )，无外边距
-+ offsetWidth = ( 100px + 10px * 2 + 1px * 2) = 122px
+- offsetWidth = ( 内容宽度 + 内边距 + 边框 )，无外边距
+- offsetWidth = ( 100px + 10px * 2 + 1px * 2) = 122px
 
 > 如果让offsetWidth等于100px，该如何做？
 >
@@ -61,7 +61,9 @@
 <p>BBB</p>
 ```
 
-
+- 相邻元素的`margin-top`和`margin-bottom`会发生重叠
+- 空白内容的`<p></p>`也会重叠
+- **答案：15px**
 
 # margin负值的问题
 
