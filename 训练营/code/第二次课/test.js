@@ -1,6 +1,10 @@
-let a = [8];
-function bar(a) {
-    a = [8, 9];
+function test(n) {
+    n = 456;
+    function fn() {
+        console.log(n);
+    }
+    fn();
 }
-bar(a);
-console.log(a);
+
+let n = 123;
+test(n);
