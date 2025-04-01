@@ -1,10 +1,6 @@
-function test(n) {
-    n = 456;
-    function fn() {
-        console.log(n);
-    }
-    fn();
+let sum = 0
+let arr = [11,22,33]
+for(let i = 0;i <= arr.length; i++){
+	sum += arr[i]
 }
-
-let n = 123;
-test(n);
+console.log(sum)
