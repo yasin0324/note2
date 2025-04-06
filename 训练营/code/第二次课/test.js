@@ -1,29 +1,21 @@
-let nums = [1, 3, -1, -3, 5, 3, 6, 7];
-let k = 3;
-
-var maxSlidingWindow = function (nums, k) {
-    const queue = [];
-    const res = [];
-
-    let i = 0;
-    for (; i < k; i++) {
-        while (queue.length && queue[queue.length - 1] < nums[i]) {
-            queue.shift();
-        }
-        queue.push(nums[i]);
-    }
-    res.push(queue[0]);
-
-    while (i < nums.length) {
-        queue.shift();
-        while (queue.length && queue[queue.length - 1] < nums[i]) {
-            queue.shift();
-        }
-        queue.push(nums[i]);
-        res.push(queue[0]);
+const { MaxPriorityQueue } = require("@datastructures-js/priority-queue");
+var topKFrequent = function (nums, k) {
+    const count = new Map();
+    for (let i = 0; i < nums.length; i++) {
+        count.set(nums[i], (count.get(nums[i]) || 0) + 1);
     }
 
-    return res;
+    const maxHeap = new MaxPriorityQueue();
+
+    // Convert map entries to array and sort by frequency
+    const entries = Array.from(count.entries());
+    entries.sort((a, b) => b[1] - a[1]);
+
+    // Take the first k elements
+    return entries.slice(0, k).map((entry) => entry[0]);
 };
 
-console.log(maxSlidingWindow(nums, k));
+let nums = [1, 1, 1, 2, 2, 3];
+let k = 2;
+
+console.log(topKFrequent(nums, k));
