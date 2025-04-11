@@ -9,6 +9,8 @@
 -   [[03_JavaScript函数的this指向|JavaScript函数的this指向]]
 -   [[04_实现call、apply、bind|实现call、apply、bind]]
 -   [[05_js中的函数增强|JavaScript中的函数增强]]
+-   [[06_js面向对象|JavaScript面向对象]]
+-   [[07_原型、原型链、继承|原型、原型链、继承]]
 
 ## 代码示例
 
