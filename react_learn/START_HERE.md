@@ -15,10 +15,10 @@
 
 首先，建议阅读`notes/`目录中的笔记文件，按照顺序学习：
 
-1. [什么是 React](notes/01-什么是React.md)
-2. [React 开发环境搭建](notes/02-React开发环境搭建.md)
-3. [JSX 语法介绍](notes/03-JSX语法介绍.md)
-4. [组件和 Props](notes/04-组件和Props.md)
+1. [[notes/01-起步基础/01-什么是React|什么是 React]]
+2. [[notes/01-起步基础/02-React开发环境搭建|React 开发环境搭建]]
+3. [[notes/01-起步基础/03-JSX语法介绍|JSX 语法介绍]]
+4. [[notes/02-核心概念/01-组件和Props/01-组件和Props概述|组件和 Props]]
 
 提示：建议使用 Obsidian 应用来查看这些笔记，以充分利用内部链接和标签功能。
 

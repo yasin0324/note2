@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import "./App.css";
+import FunctionComponentDemo from "./components/FunctionComponentDemo";
+import ClassComponentDemo from "./components/ClassComponentDemo";
+import CompositionDemo from "./components/CompositionDemo";
+import StateLifecycleDemo from "./components/StateLifecycleDemo";
 
 // 定义Todo类型
 interface Todo {
@@ -91,6 +95,11 @@ function App() {
         { id: 3, text: "构建Todo应用", completed: true },
     ]);
 
+    // 展示组件Demo的状态
+    const [demoMode, setDemoMode] = useState<
+        "none" | "function" | "class" | "composition" | "state-lifecycle"
+    >("none");
+
     // 添加Todo
     const addTodo = (text: string) => {
         const newTodo: Todo = {
@@ -126,15 +135,87 @@ function App() {
                 <div className="stats">
                     完成: {completedCount}/{totalCount}
                 </div>
+                <div className="demo-buttons">
+                    <button
+                        className={`demo-button ${
+                            demoMode === "function" ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            setDemoMode(
+                                demoMode === "function" ? "none" : "function"
+                            )
+                        }
+                    >
+                        {demoMode === "function"
+                            ? "隐藏函数组件示例"
+                            : "显示函数组件示例"}
+                    </button>
+                    <button
+                        className={`demo-button ${
+                            demoMode === "class" ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            setDemoMode(demoMode === "class" ? "none" : "class")
+                        }
+                    >
+                        {demoMode === "class"
+                            ? "隐藏类组件示例"
+                            : "显示类组件示例"}
+                    </button>
+                    <button
+                        className={`demo-button ${
+                            demoMode === "composition" ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            setDemoMode(
+                                demoMode === "composition"
+                                    ? "none"
+                                    : "composition"
+                            )
+                        }
+                    >
+                        {demoMode === "composition"
+                            ? "隐藏组件组合示例"
+                            : "显示组件组合示例"}
+                    </button>
+                    <button
+                        className={`demo-button ${
+                            demoMode === "state-lifecycle" ? "active" : ""
+                        }`}
+                        onClick={() =>
+                            setDemoMode(
+                                demoMode === "state-lifecycle"
+                                    ? "none"
+                                    : "state-lifecycle"
+                            )
+                        }
+                    >
+                        {demoMode === "state-lifecycle"
+                            ? "隐藏State和生命周期示例"
+                            : "显示State和生命周期示例"}
+                    </button>
+                </div>
             </header>
 
             <main>
-                <TodoForm addTodo={addTodo} />
-                <TodoList
-                    todos={todos}
-                    toggleTodo={toggleTodo}
-                    deleteTodo={deleteTodo}
-                />
+                {demoMode === "function" ? (
+                    <FunctionComponentDemo />
+                ) : demoMode === "class" ? (
+                    <ClassComponentDemo />
+                ) : demoMode === "composition" ? (
+                    <CompositionDemo />
+                ) : demoMode === "state-lifecycle" ? (
+                    <StateLifecycleDemo />
+                ) : (
+                    <>
+                        <TodoForm addTodo={addTodo} />
+                        <TodoList
+                            todos={todos}
+                            toggleTodo={toggleTodo}
+                            deleteTodo={deleteTodo}
+                        />
+                    </>
+                )}
             </main>
 
             <footer className="app-footer">

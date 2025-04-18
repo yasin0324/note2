@@ -1,0 +1,142 @@
+.counter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.counter-controls {
+    flex: 1;
+    min-width: 300px;
+}
+
+.counter-box {
+    margin-top: 10px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.counter-box h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.counter-box button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    background-color: #4361ee;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.counter-box button:hover {
+    background-color: #3a56d4;
+}
+
+.input-demo {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.input-demo input {
+    padding: 8px;
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.user-profile {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+}
+
+.user-profile h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.user-profile button {
+    margin-right: 10px;
+    padding: 8px 12px;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-profile button:first-of-type {
+    background-color: #e63946;
+}
+
+.user-profile button:first-of-type:hover {
+    background-color: #d62b39;
+}
+
+.user-profile button:last-of-type {
+    background-color: #43aa8b;
+}
+
+.user-profile button:last-of-type:hover {
+    background-color: #389578;
+}
+
+.lifecycle-demo {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    margin-top: 10px;
+}
+
+.lifecycle-demo h3 {
+    margin-top: 0;
+    color: #333;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.lifecycle-demo button {
+    padding: 8px 12px;
+    background-color: #7209b7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.lifecycle-demo button:hover {
+    background-color: #6207a5;
+}
+
+.note {
+    font-style: italic;
+    color: #666;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+
+section > button {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    background-color: #f72585;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+section > button:hover {
+    background-color: #e91e78;
+}
