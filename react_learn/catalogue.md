@@ -14,8 +14,8 @@
     -   [[notes/02-核心概念/01-组件和Props/03-类组件|类组件]] #组件
     -   [[notes/02-核心概念/01-组件和Props/04-组件的组合和提取|组件的组合和提取]] #组件
 -   [[notes/02-核心概念/02-State和生命周期/README.md|State和生命周期]] #状态管理 #核心概念
-    -   [[使用State]] #状态管理
-    -   [[组件生命周期]] #核心概念
+    -   [[01-使用State|使用State]] #状态管理
+    -   [[02-组件生命周期|组件生命周期]] #核心概念
 -   [[事件处理]] #交互 #核心概念
 -   [[条件渲染]] #渲染 #核心概念
 -   [[列表和Keys]] #渲染 #核心概念
@@ -26,15 +26,15 @@
 
 ## 3. Hooks
 
--   [[Hooks概述]] #hooks #核心概念
--   [[useState]] #hooks #状态管理
--   [[useEffect]] #hooks #副作用
--   [[useContext]] #hooks #状态管理
--   [[useReducer]] #hooks #状态管理
--   [[useCallback]] #hooks #性能优化
--   [[useMemo]] #hooks #性能优化
--   [[useRef]] #hooks #DOM 操作
--   [[自定义Hooks]] #hooks #代码复用
+-   [[01-Hooks概述|Hooks概述]] #hooks #核心概念
+-   [[02-useState|useState]] #hooks #状态管理
+-   [[03-useEffect|useEffect]] #hooks #副作用
+-   [[04-useContext|useContext]] #hooks #状态管理
+-   [[05-useReducer|useReducer]] #hooks #状态管理
+-   [[06-useCallback|useCallback]] #hooks #性能优化
+-   [[07-useMemo|useMemo]] #hooks #性能优化
+-   [[08-useRef|useRef]] #hooks #DOM 操作
+-   [[09-自定义Hooks|自定义Hooks]] #hooks #代码复用
 
 ## 4. 高级特性
 
