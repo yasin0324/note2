@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "ef468077cfdf2a27",
+        "id": "01c1e0c053bbea9d",
         "type": "tabs",
         "children": [
           {
-            "id": "98bbd4289850e441",
+            "id": "f7d7dc830ac52819",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "js学习笔记/06_js面向对象.md",
-                "mode": "source",
+                "file": "react_learn/prompts/prompt01.md",
+                "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "06_js面向对象"
+              "title": "prompt01"
             }
           }
         ]
@@ -53,7 +53,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "tag:MOC",
+                "query": "tag:#前端框架",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -113,13 +113,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "js学习笔记/06_js面向对象.md",
+                "file": "react_learn/prompts/prompt01.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "06_js面向对象 的大纲"
+              "title": "prompt01 的大纲"
             }
           },
           {
@@ -153,49 +153,88 @@
           }
         ],
         "currentTab": 1
+      },
+      {
+        "id": "898c3b21cea6e38c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4455b8fa4662c45c",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "关系图谱"
+            }
+          }
+        ]
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "switcher:打开快速切换": false,
       "graph:查看关系图谱": false,
+      "switcher:打开快速切换": false,
       "canvas:新建白板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-excalidraw-plugin:新建绘图文件": false,
+      "workspaces:管理工作区布局": false
     }
   },
-  "active": "98bbd4289850e441",
+  "active": "f7d7dc830ac52819",
   "lastOpenFiles": [
-    "js学习笔记/02_JavaScript的内存管理和闭包.md",
-    "js学习笔记/image/PixPin_2025-02-16_11-59-26.png",
-    "image/20-混合加密.webp",
-    "image/22-数字证书工作流程.webp",
-    "image/数字签名.webp",
-    "image/摘要算法.webp",
-    "image/bg2018072303.jpg",
-    "image/bg2018072304.jpg",
-    "image/image.png",
-    "image/image2.png",
-    "js学习笔记/05_js中的函数增强.md",
-    "Home.md",
-    "js学习笔记/index.md",
-    "html+css.md",
-    "js练习/index.md",
-    "项目难点整理.md",
-    "面经收集.md",
-    "八股.md",
-    "JS模拟实现专题.pdf",
-    "Object.create().md",
-    "instanceof.md",
-    "手写/index.md",
-    "webpack&&vite/index.md",
-    "webpack&&vite/构建工具.md",
-    "未命名.canvas",
-    "000-Index.md",
-    "vue.md"
+    "react_learn/notes/questions/README.md",
+    "react_learn/notes/questions/组件问题/组件生命周期问题.md",
+    "react_learn/notes/questions/基础问题/JSX相关问题.md",
+    "react_learn/notes/02-核心概念/01-组件和Props/README.md",
+    "react_learn/notes/02-核心概念/README.md",
+    "react_learn/notes/01-起步基础/README.md",
+    "react_learn/notes/02-核心概念/01-组件和Props/01-组件和Props概述.md",
+    "react_learn/notes/01-起步基础/03-JSX语法介绍.md",
+    "react_learn/notes/01-起步基础/02-React开发环境搭建.md",
+    "react_learn/notes/01-起步基础/01-什么是React.md",
+    "react_learn/notes/questions/路由问题",
+    "react_learn/notes/questions/组件问题",
+    "react_learn/notes/questions/状态管理问题",
+    "react_learn/notes/questions/基础问题",
+    "react_learn/notes/questions/Hook问题",
+    "react_learn/notes/questions",
+    "react_learn/notes/12-实战项目",
+    "react_learn/notes/11-新特性",
+    "react_learn/notes/10-生态系统与最佳实践",
+    "react_learn/notes/09-测试与调试",
+    "react_learn/notes/07-服务端渲染.md",
+    "react_learn/notes/06-单页应用.md",
+    "react_learn/notes/05-单向数据流.md",
+    "react_learn/notes/2-核心概念/04-组件和Props.md",
+    "react_learn/notes/1-起步基础/03-JSX语法介绍.md",
+    "react_learn/notes/1-起步基础/02-React开发环境搭建.md",
+    "react_learn/notes/1-起步基础/01-什么是React.md",
+    "react_learn/notes/02-React开发环境搭建.md",
+    "react_learn/notes/01-什么是React.md",
+    "react_learn/notes/03-JSX语法介绍.md",
+    "react_learn/example/node_modules/ms/license.md",
+    "react_learn/START_HERE.md",
+    "react_learn/README.md",
+    "什么是React.md",
+    "react_learn/catalogue.md",
+    "react_learn/notes/README.md",
+    "react_learn/example/src/logo.svg",
+    "react_learn/example/public/logo512.png",
+    "react_learn/example/public/logo192.png",
+    "react_learn/example/node_modules/resolve-url-loader/docs/detailed-problem.svg",
+    "react_learn/example/node_modules/resolve-url-loader/docs/basic-problem.svg",
+    "react_learn/example/node_modules/@jest/core/build/assets/jest_logo.png",
+    "react_learn/example/node_modules/istanbul-reports/lib/html/assets/favicon.png",
+    "react_learn/example/node_modules/istanbul-reports/lib/html-spa/assets/sort-arrow-sprite.png",
+    "react_learn/example/node_modules/istanbul-reports/lib/html/assets/sort-arrow-sprite.png",
+    "react_learn/example/node_modules/renderkid/docs/images/display.png",
+    "未命名.canvas"
   ]
 }

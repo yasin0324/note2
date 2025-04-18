@@ -1,0 +1,175 @@
+.App {
+    text-align: center;
+}
+
+.App-logo {
+    height: 40vmin;
+    pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    .App-logo {
+        animation: App-logo-spin infinite 20s linear;
+    }
+}
+
+.App-header {
+    background-color: #282c34;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.App-link {
+    color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* 应用整体样式 */
+.app {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+}
+
+/* 头部样式 */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.app-header h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: #2c3e50;
+}
+
+.stats {
+    font-size: 0.9rem;
+    color: #7f8c8d;
+    background-color: #f8f9fa;
+    padding: 0.4rem 0.8rem;
+    border-radius: 1rem;
+}
+
+/* 主体样式 */
+main {
+    margin-bottom: 2rem;
+}
+
+/* Todo表单样式 */
+.todo-form {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.todo-form input {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.todo-form button {
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.todo-form button:hover {
+    background-color: #2980b9;
+}
+
+/* Todo列表样式 */
+.todo-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.empty-message {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+}
+
+/* Todo项目样式 */
+.todo-item {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    transition: background-color 0.2s;
+}
+
+.todo-item:hover {
+    background-color: #f8f9fa;
+}
+
+.todo-item input[type="checkbox"] {
+    margin-right: 1rem;
+    cursor: pointer;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.todo-item span {
+    flex: 1;
+    font-size: 1rem;
+}
+
+.todo-item.completed span {
+    text-decoration: line-through;
+    color: #7f8c8d;
+}
+
+.todo-item button {
+    padding: 0.4rem 0.8rem;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+.todo-item button:hover {
+    background-color: #c0392b;
+}
+
+/* 页脚样式 */
+.app-footer {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
