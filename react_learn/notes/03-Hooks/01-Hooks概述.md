@@ -125,12 +125,12 @@ function MyComponent() {
 
 Hooks 和类组件都能实现相同的功能，但在使用方式上有显著区别：
 
-| 特性       | 类组件                                          | 函数组件+Hooks                               |
-| ---------- | ----------------------------------------------- | -------------------------------------------- |
-| 状态管理   | `this.state` 和 `this.setState()`               | `useState()` 和 `useReducer()`               |
-| 生命周期   | `componentDidMount`, `componentDidUpdate`, etc. | `useEffect()` 和 `useLayoutEffect()`         |
-| 上下文使用 | `static contextType` 或 `<Consumer>`            | `useContext()`                               |
-| 引用 DOM   | `React.createRef()`                             | `useRef()`                                   |
+| 特性     | 类组件                                             | 函数组件+Hooks                                   |
+| ------ | ----------------------------------------------- | -------------------------------------------- |
+| 状态管理   | `this.state` 和 `this.setState()`                | `useState()` 和 `useReducer()`                |
+| 生命周期   | `componentDidMount`, `componentDidUpdate`, etc. | `useEffect()` 和 `useLayoutEffect()`          |
+| 上下文使用  | `static contextType` 或 `<Consumer>`             | `useContext()`                               |
+| 引用 DOM | `React.createRef()`                             | `useRef()`                                   |
 | 性能优化   | `shouldComponentUpdate`, `PureComponent`        | `React.memo()`, `useMemo()`, `useCallback()` |
 
 ## Hooks 的优势
