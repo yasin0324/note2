@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "react_learn/notes/01-起步基础/03-JSX语法介绍.md",
+                "file": "react_learn/notes/03-Hooks/04-useContext.md",
                 "mode": "preview",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "03-JSX语法介绍"
+              "title": "04-useContext"
             }
           }
         ]
@@ -113,12 +113,13 @@
             "state": {
               "type": "outline",
               "state": {
+                "file": "react_learn/notes/03-Hooks/04-useContext.md",
                 "followCursor": true,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "大纲"
+              "title": "04-useContext 的大纲"
             }
           },
           {
@@ -185,8 +186,10 @@
       "workspaces:管理工作区布局": false
     }
   },
-  "active": "4455b8fa4662c45c",
+  "active": "39477f47b62bc71e",
   "lastOpenFiles": [
+    "react_learn/notes/03-Hooks/06-useCallback.md",
+    "react_learn/notes/03-Hooks/07-useMemo.md",
     "react_learn/notes/01-起步基础/03-JSX语法介绍.md",
     "react_learn/notes/01-起步基础/README.md",
     "react_learn/notes/01-起步基础/02-React开发环境搭建.md",
@@ -197,8 +200,6 @@
     "react_learn/notes/02-核心概念/README.md",
     "react_learn/notes/03-Hooks/04-useContext.md",
     "prompts/生成开发文档.md",
-    "react_learn/notes/03-Hooks/07-useMemo.md",
-    "react_learn/notes/03-Hooks/06-useCallback.md",
     "TailwindCSS_learn/02-核心概念/05-重用样式策略.md",
     "TailwindCSS_learn/02-核心概念/04-状态变体.md",
     "TailwindCSS_learn/02-核心概念/03-响应式前缀.md",
