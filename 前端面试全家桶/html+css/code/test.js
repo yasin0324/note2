@@ -63,17 +63,38 @@
 //     p.msg = e.target.value;
 // });
 
-function Person(name, age) {
-  this.name = name;
-  this.age = age;
+// function Person(name, age) {
+//   this.name = name;
+//   this.age = age;
+// }
+
+// Object.prototype.say = function () {
+//   console.log(3);
+// };
+// const p1 = new Person("ifer", 18);
+
+// console.log(p1.__proto__ === Person.prototype);
+// console.log(Person.prototype.__proto__ === Object.prototype);
+// console.log(Object.prototype.__proto__ === null);
+// console.log(p1.__proto__.__proto__ === Object.prototype);
+
+function testAsy(x) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve(x);
+        }, 3000);
+    });
 }
 
-Object.prototype.say = function () {
-  console.log(3);
-};
-const p1 = new Person("ifer", 18);
+function getSome() {
+    return "hello";
+}
 
-console.log(p1.__proto__ === Person.prototype);
-console.log(Person.prototype.__proto__ === Object.prototype);
-console.log(Object.prototype.__proto__ === null);
-console.log(p1.__proto__.__proto__ === Object.prototype);
+async function testAwt() {
+    let result = await testAsy("hello");
+    console.log(result);
+    console.log("hhh");
+}
+
+testAwt();
+console.log("111");

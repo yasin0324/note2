@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .big {
+                width: 300px;
+                height: 300px;
+                background-color: red;
+            }
+            .center {
+                width: 200px;
+                height: 200px;
+                background-color: blue;
+            }
+            .small {
+                width: 100px;
+                height: 100px;
+                background-color: green;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="big">
+            <div class="center">
+                <div class="small">small</div>
+                center
+            </div>
+            big
+        </div>
+
+        <script>
+            let big = document.querySelector(".big");
+            let center = document.querySelector(".center");
+            let small = document.querySelector(".small");
+
+            small.addEventListener("click", function () {
+                console.log("small");
+            });
+            center.addEventListener("click", function () {
+                console.log("center");
+            });
+            big.addEventListener("click", function () {
+                console.log("big");
+            });
+        </script>
+    </body>
+</html>
